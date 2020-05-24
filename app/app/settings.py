@@ -25,7 +25,7 @@ SECRET_KEY = '^^#w_84#f60inup%ijtq*$s+u1!xroe6amdb_u8uemnr7i9)u7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', 'api.appclimate.com']
 
 
 # Application definition
