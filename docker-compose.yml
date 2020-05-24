@@ -37,7 +37,7 @@ services:
     hostname: zoblems-app-api_production_caddy
     image: zoblems-app-api_production_caddy
     depends_on:
-      - django
+      - app
     volumes:
       - production_caddy:/root/.caddy
     env_file:
