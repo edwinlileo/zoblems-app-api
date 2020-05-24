@@ -1,0 +1,7 @@
+# AWS
+
+DJANGO_AWS_ACCESS_KEY_ID=GP7WNCQZGXJPGSV75YOQ
+DJANGO_AWS_SECRET_ACCESS_KEY=7mFGG5kA9fD878qI36M3YtMsAWtFx2uE2pD5yElkeLM
+DJANGO_AWS_STORAGE_BUCKET_NAME=zoblems-backend-api
+DJANGO_AWS_S3_HOST=zoblems-backend-api.fra1.digitaloceanspaces.com
+DJANGO_AWS_S3_ENDPOINT_URL=https://zoblems-backend-api.fra1.digitaloceanspaces.com
