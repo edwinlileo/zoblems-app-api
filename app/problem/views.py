@@ -7,9 +7,14 @@ from problem.models import Response
 from problem.serializers import ResponseSerializer
 
 
-class ResponseViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
+class ResponseViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, \
+                      mixins.CreateModelMixin):
     """Manage responses in the database"""
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
     queryset = Response.objects.all()
     serializer_class = ResponseSerializer
+
+    def perform_create(self, serializer):
+        """Create a new response"""
+        serializer.save(user=self.request.user)

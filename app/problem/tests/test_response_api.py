@@ -48,3 +48,21 @@ class PrivateResponseTests(TestCase):
         serializer = ResponseSerializer(responses, many=True)
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(res.data, serializer.data)
+
+    def test_create_response_successful(self):
+        """Test creating a new response"""
+        payload = {'description': 'Sample description'}
+        self.client.post(RESPONSE_URL, payload)
+
+        exists = Response.objects.filter(
+            user=self.user,
+            description=payload['description']
+        ).exists()
+        self.assertTrue(exists)
+
+    def test_create_response_invalid(self):
+        """Test creating a new response iwth invalid payload"""
+        payload = {'description': ''}
+        res = self.client.post(RESPONSE_URL, payload)
+
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
