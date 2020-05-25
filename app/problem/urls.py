@@ -6,6 +6,7 @@ from problem import views
 
 router = DefaultRouter()
 router.register('responses', views.ResponseViewSet)
+router.register('problems', views.ProblemViewSet)
 
 app_name = 'problem'
 

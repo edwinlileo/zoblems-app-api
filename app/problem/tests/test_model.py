@@ -19,3 +19,12 @@ class ResponseModelTests(TestCase):
         )
 
         self.assertEqual(str(response), response.description)
+
+    def test_problem_str(self):
+        """Test the problem string representation"""
+        problem = models.Problem.objects.create(
+            title='Sample title',
+            user=sample_user()
+        )
+
+        self.assertEqual(str(problem), problem.title)
